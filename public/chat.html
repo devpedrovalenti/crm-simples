@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0C3036">
+<title>Fale com a gente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div class="widget">
+  <header class="w-head"><div class="brand"><i></i></div><div><b>Fale com a gente</b><small>Respondemos por aqui, em instantes</small></div></header>
+  <form class="w-start" id="start">
+    <h1>Como podemos te chamar?</h1>
+    <p class="sub">Só o nome é obrigatório. Se deixar o WhatsApp, podemos continuar a conversa por lá.</p>
+    <label class="field">Nome<input name="name" required maxlength="120" autocomplete="name"></label>
+    <label class="field">WhatsApp com DDD (opcional)<input name="phone" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-8888"></label>
+    <label class="field">E-mail (opcional)<input name="email" type="email" autocomplete="email"></label>
+    <p class="err" id="err" role="alert"></p>
+    <button class="primary wide">Iniciar conversa</button>
+  </form>
+  <div class="msgs" id="msgs" hidden aria-live="polite"></div>
+  <form class="composer" id="send" hidden>
+    <textarea name="body" rows="1" placeholder="Escreva sua mensagem" aria-label="Mensagem" required></textarea>
+    <button class="primary" aria-label="Enviar mensagem"><svg class="ic" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 3L10 14"/><path d="M21 3l-7 18-4-7-7-4 18-7z"/></svg></button>
+  </form>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/chat.js"></script>
+</body>
+</html>
